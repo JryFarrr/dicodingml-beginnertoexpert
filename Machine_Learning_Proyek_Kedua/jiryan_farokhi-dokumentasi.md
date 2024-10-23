@@ -1,0 +1,17 @@
+# Submission 1: Sentiment Analys 
+Nama: Jiryan Farokhi
+
+Username dicoding: jiryan_farokhi
+
+| | Deskripsi |
+| ----------- | ----------- |
+| Dataset | [Review Content Analyst](https://www.kaggle.com/competitions/internal-selection-satria-data)|
+| Masalah | Dalam Dataset ini terdapat data review content dari para user dari data review tersebut sulit untuk menentukan apakah review content tersebut negatif atau positif karena terdapat review dengan 1500 data review |
+| Solusi machine learning | Machine Learning menghadirkan solusi dengan deteksi otomatis dalam data dengan menggunakan pendekatan Natural Language Processing yang diproses dengan model LSTM serta memanfaatkan machine learning pipeline untuk mengotomatiskan alur kerja pembelajaran mesin dari mulai preprocessing sammpai pengujian model agar dapat lebih terstruktur, efisien, dan mudah diulang  |
+| Metode pengolahan data | Metode pengelolahan data yang digunakan yaitu menggunakan machine learning pipeline yang terdiri dari beberapa tahapan, yaitu data ingestion, data validation, dan data preprocessing. Data ingestion merupakan tahapan ketika data diproses ke format tertentu. Data validation meurpakan tahapan untuk proses validasi data yang baru dan memberi peringatan apabila ada anomali data. Data preprocessing adalah tahapan untuk memproses training data sebelum digunakan untuk melatih model machine learning |
+| Arsitektur model | Model ini dibangun menggunakan layer TextVectorization, sebagi layer yang berfungsi untuk memproses input string kedalam bentuk angka, dan layer embedding bertugas untuk mengukur kedekatan atau kesamaan dari setiap kata untuk mengetahui kata tersebut merupakan kata negatif atau kata positif. Serta model compile menggunakan Binary Crossentropy Adam dengan learning_rate 0.01 dan metrics BinaryAccuray |
+| Metrik evaluasi | Mertrik evaluasi yang di gunakan pada model ini yaitu Example Count, AUC, TP, TN, FP, FN, dan akurasi Biner. Example Count merupakan konfigurasi yang menghitung jumlah sampel yang digunakan dalam evaluasi yang berguna untuk memehamai berapa banyak data yang digunakan untuk menghasilkan metriks lainnya. AUC merupakan metriks yang mengukur area dibawah kurva ROC (Receiver Operationg Characteristic). Metriks ini memberikana gambaran kemampuan model untuk membedakan antara kelas positif dan negatif. Nilai AUC berkisar antara 0 dan 1 yang mana lebih tinggi akan semakin baik. TP adalah data positif yang diprediksi benar, TN adalah data negatif yang diprediksi benar, FP adalah data yang diprediksi positif namun salah, dan FN adalah data yang diprediksi negatif namun salah. Metrik ini diolah menjadi nilai accuracy, precision, recall, dan specificity untuk memahami performa model. Akurasi Biner adalah proporsi prediksi benar dari keseluruhan prediksi |
+| Performa model | Evaluasi model diperoleh yaitu AUC sebesar 68%, kemudian example_count 281, dengan BinaryAccuracy 62%, dan loss sebesar 1.816. Untuk False Negatives 50, False Positive 55, True Negative 79 dan True Positive 97. Model yang telah dibuat dapat dilakukan peningkatan performa, karena model belum cukup baik karena BinaryAccuracy masih dibawah 80% |
+| Opsi Deployment | Proyek machine learning ini dideploy dengan layanan hosting Cloud
+| Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [sentiments-detection](http://103.190.215.28:8501/v1/models/sentiments-detection-model/metadata)|
+| Monitoring | 	Project ini di monitoring dengan prometheus menggunakan grafana
